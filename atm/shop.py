@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 from logging import logbill
 def shop(user,left):
-    shoplist = file('/opt/python/shoplist')
+    shoplist = file('H:\\python\\atm\\shoplist')
     shop_dic = {}
     time = 2015
     print '\t\tshoplist',

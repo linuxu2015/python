@@ -2,8 +2,8 @@
 import sys
 import pickle
 from  menu import menu_show
-pkl_path = 'H:\atm\userinfo.pkl'
-account = file('H:\atm\userlist')
+pkl_path = 'H:\\python\\atm\\userinfo.pkl'
+account = file('H:\\python\\atm\\userlist')
 account_dict = {}
 global user
 global left
@@ -29,7 +29,7 @@ while True:
                     print 'your money is %s' % left
                     left = menu_show(user, left)
                     userinfo_dic[user] = left
-                    userinfofile = open('/opt/python/userinfo.pkl', 'wb')
+                    userinfofile = open('H:\\python\\atm\\userinfo.pkl', 'wb')
                     pickle.dump(userinfo_dic, userinfofile)
                 #		    print type(left)
             else:
