@@ -4,7 +4,7 @@ import list_container
 from prettytable import PrettyTable
 import time
 import sys
-import tab
+#import tab
 global c
 #c = docker.Client(base_url='tcp://192.168.22.145:4243')
 c = docker.Client(base_url='tcp://127.0.0.1:4243')
@@ -57,11 +57,14 @@ def listcontainer():
 #listimages()
 #listcontainer()
 def CreateContainer():
-    image_name = raw_input('plz input your want use image name:')
-    container_name = raw_input('plz input container name:')
-    c_id = c.create_container(image=image_name,name=container_name,hostname=container_name,tty=True,network_disabled=True)
+    try:
+        image_name = raw_input('plz input your want use image name:')
+        container_name = raw_input('plz input container name:')
+        c_id = c.create_container(image=image_name,name=container_name,hostname=container_name,tty=True,network_disabled=True)
     #c_id = c.create_container(image='%s' % sys.argv[1],command='%s' % sys.argv[2],name='%s' % sys.argv[3],hostname='%s' % sys.argv[3],tty=True,network_disabled=True)
-    c.start(c_id[u'Id'])
+        c.start(c_id[u'Id'])
+    except Exception:docker.errors.APIError
+    print '\033[0;31;30mcan not execute your input '
 #listimages()
 #CreateContainer()
 #listcontainer()
