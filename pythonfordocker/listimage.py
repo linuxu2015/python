@@ -5,7 +5,8 @@ from prettytable import PrettyTable
 import time
 import sys
 global c
-c = docker.Client(base_url='tcp://192.168.22.145:4243')
+#c = docker.Client(base_url='tcp://192.168.22.145:4243')
+c = docker.Client(base_url='tcp://127.0.0.1:4243')
 def listimages():
     image = c.images()
     l_index = len(image)
@@ -21,7 +22,7 @@ def listimages():
         vsize = int(ima['VirtualSize'])/1024/1024
         ima_vsize = '%d M' % vsize
         ima_pid = ima['ParentId'][0:11]
-        ima_name = ima['RepoTags'][1]
+        ima_name = ima['RepoTags'][0]
         ima_digest = ima['RepoDigests']
         ima_id = ima['Id'][0:11]
         ima_size = ima['Size']
@@ -55,12 +56,57 @@ def listcontainer():
 #listimages()
 #listcontainer()
 def CreateContainer():
-    if len(sys.argv) != 4:
-        print 'useage'
+    image_name = raw_input('plz input your want use image name:')
+    container_name = raw_input('plz input container name:')
+    c_id = c.create_container(image=image_name,name=container_name,hostname=container_name,tty=True,network_disabled=True)
+    #c_id = c.create_container(image='%s' % sys.argv[1],command='%s' % sys.argv[2],name='%s' % sys.argv[3],hostname='%s' % sys.argv[3],tty=True,network_disabled=True)
+    c.start(c_id[u'Id'])
+#listimages()
+#CreateContainer()
+#listcontainer()
+def StopContainer():
+    stop_id = raw_input("plz input you want stop container's id:")
+    c.stop(stop_id)
+def SearchImage():
+    searchimagename = raw_input('plz input your want search image name:')
+    search_result = c.search(searchimagename)
+    s_index = len(search_result)
+    a = PrettyTable(['name','is_automated','is_official','is_trusted','description','star_count'])
+    a.align['description'] = 'l'
+    a.padding_width = 1
+    for i in range(0,s_index):
+        #print list_image[i]['RepoTags'][0]
+        search_r = search_result[i]
+        image_des = search_r['description'][0:20]
+        image_auto = search_r['is_automated']
+        image_office = search_r['is_official']
+        image_trust = search_r['is_trusted']
+        image_name = search_r['name']
+        image_star = search_r['star_count']
+        a.add_row([image_name,image_auto,image_office,image_trust,image_des,image_star])
+    print a
+#SearchImage()
+
+   
+
+while True:
+    print '''this is the list help you to manage your docker
+    1. list images
+    2. list container
+    3. start container
+    4. stop container
+    5. search images'''
+    choice = raw_input('plz input your choice:')
+    if choice == '1':
+        listimages()
+    elif choice == '2':
+        listcontainer()
+    elif choice == '3':
+        CreateContainer()
+    elif choice == '4':
+        StopContainer()
+    elif choice == '5':
+        SearchImage()
     else:
-        c_id = c.create_container(image='%s' % sys.argv[1],command='%s' % sys.argv[2],name='%s' % sys.argv[3],hostname='%s' % sys.argv[3],tty=True,network_disabled=True)
-        print c_id[u'Id']
-        c.start(c_id[u'Id'])
-listimages()
-CreateContainer()
-listcontainer()
+        choice == 'q' or choice == 'quit'
+        sys.exit()
