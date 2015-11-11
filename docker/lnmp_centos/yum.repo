@@ -1,0 +1,31 @@
+[Base]
+name=CentOS-Base6 from yum-server.aioute.com $basearch
+baseurl=http://yum-server.aioute.com/Centos-6/Base/$basearch
+enable=1
+gpgcheck=1
+gpgkey=http://yum-server.aioute.com/Centos-6/Base/$basearch/RPM-GPG-KEY-CentOS-6
+[Epel]
+name=CentOS-Base6 from yum-server.aioute.com $basearch
+baseurl=http://yum-server.aioute.com/Centos-6/Epel/$basearch
+enable=1
+gpgcheck=0
+[Rpmforge]
+name=CentOS-Base6 from yum-server.aioute.com $basearch
+baseurl=http://yum-server.aioute.com/Centos-6/Rpmforge/$basearch
+enable=0
+gpgcheck=0
+[nginx]
+name=nginx repo from yum-server.aioute.com
+baseurl=http://yum-server.aioute.com/nginx/centos/6/$basearch/
+enabled=1
+gpgcheck=0
+[php]
+name=php repo from yum-server.aioute.com
+baseurl=http://yum-server.aioute.com/php/repo.webtatic.com/yum/el6/$basearch
+enbable=1
+gpgcheck=0
+[mysql]
+name=mysql55 repo from yum-server.aioute.com
+baseurl=http://yum-server.aioute.com/mysql/repo.mysql.com/yum/mysql-5.5-community/el/6/$basearch
+enable=1
+gpgcheck=0
