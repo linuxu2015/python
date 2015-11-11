@@ -1,2 +1,0 @@
-ubuntu的nginx+php的镜像，docker内的网站目录为/web 日志文件在/web/logs下
-本地主机映射网站时需要在网站目录里创建一个logs目录来存放日志
