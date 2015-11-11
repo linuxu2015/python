@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9f519760-4cdc-4df5-9465-3b036cf1aaa6" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docker/xiaole_server/README.md" afterPath="$PROJECT_DIR$/docker/xiaole_server/README.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="python.iws" />
@@ -111,8 +112,8 @@
             <state />
           </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.07594936">
-              <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.835443">
+              <caret line="33" column="43" selection-start-line="33" selection-start-column="43" selection-end-line="33" selection-end-column="43" />
               <folding />
             </state>
           </provider>
@@ -625,7 +626,13 @@
       <option name="project" value="LOCAL" />
       <updated>1447224996527</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="add docker readme file">
+      <created>1447225025317</created>
+      <option name="number" value="00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1447225025317</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -671,7 +678,8 @@
     <MESSAGE value="readme 添加windows路径解释" />
     <MESSAGE value="test" />
     <MESSAGE value="docker Dockerfile" />
-    <option name="LAST_COMMIT_MESSAGE" value="docker Dockerfile" />
+    <MESSAGE value="add docker readme file" />
+    <option name="LAST_COMMIT_MESSAGE" value="add docker readme file" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1120,8 +1128,8 @@
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.07594936">
-          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.835443">
+          <caret line="33" column="43" selection-start-line="33" selection-start-column="43" selection-end-line="33" selection-end-column="43" />
           <folding />
         </state>
       </provider>
