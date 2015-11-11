@@ -1,0 +1,3 @@
+小乐插座推送及其他相关服务docker，基础镜像为编译安装好php55的centos，镜像已打包为centos_php_xiaole.tar
+需将该镜像导入在使用该Dockerfile
+卷组为/server须将本地主机的小乐程序映射该目录
