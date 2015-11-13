@@ -15,7 +15,8 @@ def listimages():
     for i in range(0,l_index):
         #print list_image[i]['RepoTags'][0]
         ima = image[i]
-        ima_created = ima['Created']
+        createtime = ima['Created']
+        ima_created = time.strftime('%Y-%m-%d-%X',time.localtime(createtime)) 
         ima_labels = ima['Labels']
         vsize = int(ima['VirtualSize'])/1024/1024
         ima_vsize = '%d M' % vsize
