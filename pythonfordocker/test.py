@@ -1,5 +1,5 @@
 #!/usr/bin/env python
 # coding=utf-8
-def test ():
+def test():
     print 1
 
