@@ -1,0 +1,15 @@
+def pt(tou,*argv):
+    from prettytable import PrettyTable
+    l = []
+    #for i in argv:
+    #l = l.append(i)
+    a = PrettyTable(tou)
+    a.align[''] = 'a'
+    a.padding_width = 1
+    #for i in range(0,l_index):
+        #print list_image[i]['RepoTags'][0]
+    for i in argv:
+        l.append(i)
+    a.add_row(l)
+    print a
+pt(['tt','1','2','3','4','5','6','7'],1,2,3,4,5,6,7,8)
