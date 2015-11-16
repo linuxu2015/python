@@ -29,6 +29,8 @@ def listimages():
         ima_size = ima['Size']
         a.add_row([ima_created,ima_labels,ima_vsize,ima_pid,ima_name,ima_digest,ima_id,ima_size])
     print a
+
+
 def listcontainer():
     container = c.containers()
     t = PrettyTable(['command','creattime','hostconfig','id','image','labels','name','ports','status'])
@@ -56,6 +58,8 @@ def listcontainer():
     print t
 #listimages()
 #listcontainer()
+
+
 def CreateContainer():
     try:
         image_name = raw_input('plz input your want use image name:')
@@ -68,9 +72,13 @@ def CreateContainer():
 #listimages()
 #CreateContainer()
 #listcontainer()
+
+
 def StopContainer():
     stop_id = raw_input("plz input you want stop container's id:")
     c.stop(stop_id)
+
+
 def SearchImage():
     searchimagename = raw_input('plz input your want search image name:')
     search_result = c.search(searchimagename)
