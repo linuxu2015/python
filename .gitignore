@@ -1,1 +1,5 @@
 *.pyc
+../python/.metadata
+RemoteSystemsTempFiles
+.idea
+.metadata
