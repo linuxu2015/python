@@ -11,6 +11,11 @@ import json
 import sys
 reload(sys)
 sys.setdefaultencoding('utf-8')
+import time
+import MySQLdb as mysql
+db = mysql.connect(user='root',passwd='112613',db='python',host='127.0.0.1',use_unicode=True,charset='utf8')
+db.autocommit(True)
+cur = db.cursor()
 start_station = 'YAK'
 arrive_station = 'JNK'
 date = '2016-02-01'
@@ -51,7 +56,10 @@ def listtrain():
 		yw = realdata['yw_num']
 		wz = realdata['wz_num']
 		s =  '车次：%s 始发站:%s 终点站:%s 上车站:%s 下车站:%s 开车时间:%s 到达时间:%s 车辆类型:%s 历时:%s 一等座:%s 二等座:%s 硬座:%s 硬卧:%s 无座:%s' %(station_train_code,start_station_name,end_station_name,from_station_name,to_station_name,start_time,arrive_time,train_class_name,lishi,zy,ze,yz,yw,wz)
-                return s
-#while True:
-listtrain()
-#	time.sleep(5)
+                #return s
+                sql = "insert into train (station_train_code,start_station_name,end_station_name,from_station_name,to_station_name,start_time,arrive_time,train_class_name,lishi,zy,ze,yz,yw,wz) value ('%s','%s','%s','%s','%s','%s','%s','%s','%s','%s','%s','%s','%s','%s')" %(station_train_code,start_station_name,end_station_name,from_station_name,to_station_name,start_time,arrive_time,train_class_name,lishi,zy,ze,yz,yw,wz)
+#                sql = "insert into train (station_train_code,start_station_name,end_station_name,from_station_name,to_station_name,start_time,arrive_time,train_class_name,lishi,zy,ze,yz,yw,wz) value ('%s','%s','%s','%s','%s','%s','%s','%s','%s','%s','%s','%s','%s','%s')" %(1,1,1,1,1,1,1,1,1,1,1,1,1,1)
+                cur.execute(sql)
+while True:
+        listtrain()
+	time.sleep(5)
