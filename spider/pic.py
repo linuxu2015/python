@@ -23,8 +23,8 @@ url = 'http://t66y.com/htm_data/2/1601/1819717.html'
 session = requests.Session()
 #session.proxies = {'http': 'ss://aes-256-cfb:13814681@us1.iss.tf:443',
 #                   'https': 'ss://aes-256-cfb:13814681@us1.iss.tf:443'}
-proxies = { 'http': 'http://192.168.1.234:8787',
-            'https': 'https://192.168.1.234:8787' }
+proxies = { 'http': 'http://127.0.0.1:4411',
+            'https': 'https://127.0.0.1:4411' }
 session.header = {
             'Accept':'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
             'Accept-Encoding':'gzip, deflate, sdch',
