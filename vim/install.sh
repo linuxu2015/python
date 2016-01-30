@@ -1,6 +1,6 @@
 #!/bin/bash
-export https_proxy=192.168.22.216:4411
-export http_proxy=192.168.22.216:4411
+#export https_proxy=192.168.101.189:4411
+#export http_proxy=192.168.101.189:4411
 echo "install simple_vim_setting"
 echo "---------------------------------"
 echo "install supporting tools.."
