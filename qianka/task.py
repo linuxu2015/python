@@ -1,4 +1,4 @@
-#!/usr/bin/env python2.6
+#!/usr/bin/env python
 # coding:utf-8
 import requests
 import pickle
@@ -45,7 +45,6 @@ def listtask():
 	res=session.get(url)
 	#print res.text
         data = json.loads(res.text)
-	#print data
 	for i in range(0,6):
 		status = data['data'][i]['status']
 	#	status = 2
@@ -53,27 +52,24 @@ def listtask():
 			msg = msg + data['data'][i]['title']
 			weixin.login('linuxu2015@gmail.com','Xlb890213')
 			weixin.singlesend('oZE9Gv2DJURwE6WY8HZ0bENqhVW4',msg)
-			print msg
+			print(msg)
 			break
 			#sys.exit()
-	print data['data'][0]['title'],data['data'][0]['id'],data['data'][0]['qty']
-	print data['data'][1]['title'],data['data'][1]['id'],data['data'][1]['qty']
-	print data['data'][2]['title'],data['data'][2]['id'],data['data'][2]['qty']
-	print data['data'][3]['title'],data['data'][3]['id'],data['data'][3]['qty']
-	print data['data'][4]['title'],data['data'][4]['id'],data['data'][4]['qty']
-#	print data['data'][5]['title'],data['data'][5]['id'],data['data'][5]['qty']
-#	print data['data'][6]['title'],data['data'][6]['id'],data['data'][6]['qty']
+	for j in range(0,3):
+		task_title = data['data'][j]['title']
+		task_id = data['data'][j]['id']
+		task_qty = data['data'][j]['qty']
+		print(task_title),
+		print(task_id),
+		print(task_qty)
 	tid = data['data'][0]['id']
-	#print tid
 	taskid = str(tid)
         taskqty = data['data'][0]['qty']
-        #taskqty = 1
 	task = { 'task_id' : taskid }
 	if taskqty > 0:
 		qiang(task)
-		print '#################################抢到了！！####################################'
-	print time.strftime(ISOTIMEFORMAT,time.localtime(time.time()))
-#while True:
+		print('#################################抢到了！！####################################')
+	print(time.strftime(ISOTIMEFORMAT,time.localtime(time.time())))#while True:
 #	if task == False:
 listtask()
 #		time.sleep(2)
