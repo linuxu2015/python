@@ -1,5 +1,5 @@
 #!/bin/bash
 while true;do
 	python2.6 task.py
-	sleep 1.5
+	sleep 1
 done
